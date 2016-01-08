@@ -56,6 +56,18 @@ public final class Ticket$Updater implements Updater<Ticket> {
    		}
 	}
 }
+
+// To get updater instance
+public void updateTicket(Ticket oldTicket, Ticket newTicket) {
+	// UpdaterManager instance should better be singleton
+	UpdaterManager manager = new UpdaterManagerImpl();
+	Updater<Ticket> updater = manager.getUpdater(Ticket.class);
+
+	// updater may be null when Ticket is not @Updatable or Ticket is a non-static inner class
+	if (null != updater) {
+		updater.update(oldTicket, newTicket);
+	}
+}
 ```
 
 ## How to use?
