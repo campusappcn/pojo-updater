@@ -1,4 +1,7 @@
 apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.github.campusappcn'
 
 compileJava {
     sourceCompatibility = JavaVersion.VERSION_1_7
@@ -6,5 +9,5 @@ compileJava {
 }
 jar {
 	baseName = 'pojo-updater'
-	version = '0.1.2'
+	version = '0.1.3'
 }
