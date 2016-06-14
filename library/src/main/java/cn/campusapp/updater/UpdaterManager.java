@@ -8,4 +8,9 @@ import java.lang.annotation.Target;
  */
 public interface UpdaterManager {
     <T> Updater<T> getUpdater(Class<T> tClass);
+
+    @Target(ElementType.TYPE)
+    @interface ManagedUpdater {
+        Class<?> value();
+    }
 }
